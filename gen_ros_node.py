@@ -13,8 +13,10 @@ from pprint import pprint
 from common import common, gen_control_func, gen_report_func
 
 def camel_case_to_snake_case(camel_case: str):
-    snake_case = re.sub(r"(?P<key>[A-Z])", r"_\g<key>", camel_case)
-    return snake_case.lower().strip('_')
+    snake_case = re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', camel_case)
+    snake_case = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1_\2', snake_case)
+    snake_case = snake_case.lower().strip('_')
+    return re.sub(r'__+', '_', snake_case)
 
 def snake_case_to_camel_case(snake_str):
     return "".join(x.capitalize() for x in snake_str.lower().split("_"))
@@ -192,7 +194,7 @@ def gen_protocols(protocol_conf_file, protocol_dir, car_type):
     control_hpp_fmt = common.get_tpl_fmt(control_hpp_tpl_file)
     control_cpp_fmt = common.get_tpl_fmt(control_cpp_tpl_file)
     control_node_cpp_fmt = common.get_tpl_fmt(control_node_cpp_tpl_filr)
-    print(len(send_hpp_fmt_val))
+        
     try:
         with open(control_hpp_file, 'w') as fp:
             fp.write(control_hpp_fmt % send_hpp_fmt_val)
@@ -202,6 +204,12 @@ def gen_protocols(protocol_conf_file, protocol_dir, car_type):
             fp.write(control_node_cpp_fmt % send_hpp_fmt_val)
     except:
         print('No control messages.')
+        with open(control_hpp_file, 'w') as fp:
+            pass
+        with open(control_cpp_file, 'w') as fp:
+            pass
+        with open(control_node_cpp_file, 'w') as fp:
+            pass
     
     report_hpp_tpl_file = "template/report_parser.hpp.tpl"
     report_cpp_tpl_file = "template/report_parser.cpp.tpl"
@@ -222,7 +230,12 @@ def gen_protocols(protocol_conf_file, protocol_dir, car_type):
         with open(report_node_cpp_file, 'w') as fp:
             fp.write(report_node_cpp_fmt % recv_cpp_fmt_val)
     except:
-        print('No report messages.')
+        with open(report_hpp_file, 'w') as fp:
+            pass
+        with open(report_cpp_file, 'w') as fp:
+            pass
+        with open(report_node_cpp_file, 'w') as fp:
+            pass
     
 
     byte_mani_cpp_tpl = "template/Byte.cc.tpl"

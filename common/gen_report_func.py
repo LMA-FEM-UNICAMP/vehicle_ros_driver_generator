@@ -3,8 +3,10 @@
 import re
 
 def camel_case_to_snake_case(camel_case: str):
-    snake_case = re.sub(r"(?P<key>[A-Z])", r"_\g<key>", camel_case)
-    return snake_case.lower().strip('_')
+    snake_case = re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', camel_case)
+    snake_case = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1_\2', snake_case)
+    snake_case = snake_case.lower().strip('_')
+    return re.sub(r'__+', '_', snake_case)
 
 def snake_case_to_camel_case(snake_str: str):
     return "".join(x.capitalize() for x in snake_str.lower().split("_"))

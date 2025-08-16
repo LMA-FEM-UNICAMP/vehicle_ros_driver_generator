@@ -13,6 +13,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+find_package(lma_%(car_type)s_driver_msgs)
+
 ament_auto_add_executable(${PROJECT_NAME}_control_command_node
   %(command_cpp_list)s
   src/Byte.cc
@@ -30,6 +32,6 @@ ament_auto_add_executable(${PROJECT_NAME}_report_parser_node
 # install
 ament_auto_package(
   INSTALL_TO_SHARE
-  launch
+  # launch
   # config
 )

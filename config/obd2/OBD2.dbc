@@ -60,7 +60,7 @@ BO_ 7 Long_Term_Fuel_Trim_Bank1: 1 Service__01
 BO_ 8 Short_Term_Fuel_Trim_Bank2: 1 Service__01
    SG_ InstantFuelTrimBank2 : 0|8@1- (0.781,-100) [-100|99.2] "%" Service__01
 
-BO_ 9 Long_Term_Fuel_Trim_Bank1: 1 Service__01
+BO_ 9 Long_Term_Fuel_Trim_Bank2: 1 Service__01
    SG_ LongTermFuelTrimBank2 : 0|8@1- (0.781,-100) [-100|99.2] "%" Service__01
 
 BO_ 10 Fuel_Pressure: 1 Service__01
