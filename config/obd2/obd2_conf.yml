@@ -5,6 +5,6 @@ sender_list: []
 sender: ACU
 black_list: []
 
-output_dir: output
-config_dir: config/obd2
+output_dir: output/obd2
+config_dir: config/obd2/
 
