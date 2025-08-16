@@ -1,5 +1,5 @@
-#ifndef PIX_HOOKE_DRIVER__REPORT_PARSER_HPP_
-#define PIX_HOOKE_DRIVER__REPORT_PARSER_HPP_
+#ifndef lma_HOOKE_DRIVER__REPORT_PARSER_HPP_
+#define lma_HOOKE_DRIVER__REPORT_PARSER_HPP_
 
 #include <string>
 #include <memory>
@@ -13,8 +13,8 @@
 
 
 // include- msgs header file
-// Example: #include "pix_driver_msgs/BrakeCommand.h"
-// #include pix_driver_msgs/protocols["name"].h
+// Example: #include "lma_driver_msgs/BrakeCommand.h"
+// #include lma_driver_msgs/protocols["name"].h
 %(include_msg_list)s
 
 
@@ -23,7 +23,7 @@
 // #include protocols["name"].cpp
 %(include_hpp_list)s
 
-namespace pix_%(car_type)s_driver
+namespace lma_%(car_type)s_driver
 {
 namespace report_parser
 {
@@ -97,11 +97,11 @@ public:
    */
   void callbackIsPublish(const std_msgs::msg::Bool::ConstSharedPtr & msg);
   /**
-   * @brief parser can frames, convert can frames to pix_driver_msgs
+   * @brief parser can frames, convert can frames to lma_driver_msgs
    * 
    */
   void timerCallback();
 };
 } // report_parser
-} // pix_%(car_type)s_driver
-#endif // PIX_HOOKE_DRIVER__REPORT_PARSER_HPP_
+} // lma_%(car_type)s_driver
+#endif // lma_HOOKE_DRIVER__REPORT_PARSER_HPP_

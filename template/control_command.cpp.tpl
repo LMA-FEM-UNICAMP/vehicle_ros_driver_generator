@@ -1,6 +1,6 @@
-#include <pix_%(car_type)s_driver/control_command.hpp>
+#include <lma_%(car_type)s_driver/control_command.hpp>
 
-namespace pix_%(car_type)s_driver
+namespace lma_%(car_type)s_driver
 {
 namespace control_command
 {
@@ -24,7 +24,7 @@ ControlCommand::ControlCommand() : Node("control_command")
     // from %(car_type)s driver autoware interface
     /**
     a2v_brake_ctrl_sub_ = create_subscription<A2vBrakeCtrl>(
-      "/pix_hooke/a2v_brakectrl_131", 1, std::bind(&ControlCommand::callbackBrakeCtrl, this, _1));
+      "/lma_hooke/a2v_brakectrl_131", 1, std::bind(&ControlCommand::callbackBrakeCtrl, this, _1));
     **/
     %(subscribe_instance_list)s
     // engage
@@ -98,4 +98,4 @@ void ControlCommand::timerCallback()
 }
 
 } // namespace control_command
-} // namespace pix_%(car_type)s_driver
+} // namespace lma_%(car_type)s_driver

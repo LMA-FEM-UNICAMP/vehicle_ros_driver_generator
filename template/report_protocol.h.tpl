@@ -1,6 +1,6 @@
 #pragma once
 
-#include <pix_%(car_type_lower)s_driver/Byte.hpp>
+#include <lma_%(car_type_lower)s_driver/Byte.hpp>
 #include <iostream>
 
 class %(classname)s {

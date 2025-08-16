@@ -44,6 +44,7 @@ def gen(conf):
     gen_protocols.gen_protocols(protocol_conf_file, output_dir, car_type)
 
     # 3. 代码生成 - 生成订阅发布ros节点
+    print('** car_type:'+car_type)
     gen_ros_node.gen_protocols(protocol_conf_file, output_dir, car_type)
     # msg文件生成
     gen_msg_file.gen_proto_file(protocol_conf_file, output_dir)

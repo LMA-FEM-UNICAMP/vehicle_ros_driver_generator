@@ -66,3 +66,5 @@ logs/
 .catkin_tools/
 
 # Don't ignore src/ because full-text search won't work.
+
+output/

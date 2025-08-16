@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(pix_%(car_type)s_driver_msgs)
+project(lma_%(car_type)s_driver_msgs)
 
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()

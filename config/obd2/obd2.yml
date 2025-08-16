@@ -1,0 +1,386 @@
+car_type: obd2
+protocols:
+  '1':
+    id: '1'
+    name: monitor_status_since__d_t_cs_cleared
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 4
+      is_signed_var: false
+      len: 1
+      name: m_i_l__o_n__o_f_f
+      offset: 0.0
+      order: intel
+      physical_range: '[0|1]'
+      physical_unit: ''
+      precision: 1.0
+      type: bool
+    - bit: 0
+      is_signed_var: false
+      len: 7
+      name: d_t_c__c_o_u_n_t
+      offset: 0.0
+      order: intel
+      physical_range: '[0|1]'
+      physical_unit: ''
+      precision: 1.0
+      type: int
+    - bit: 15
+      is_signed_var: false
+      len: 1
+      name: r_e_s_e_r_v_e_d
+      offset: 0.0
+      order: intel
+      physical_range: '[0|0]'
+      physical_unit: ''
+      precision: 1.0
+      type: bool
+    - bit: 11
+      is_signed_var: false
+      len: 1
+      name: n_o__n_a_m_e
+      offset: 0.0
+      order: intel
+      physical_range: '[0|1]'
+      physical_unit: ''
+      precision: 1.0
+      type: bool
+  '10':
+    id: '10'
+    name: m_a_f_air_flow_rate
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: m_a_f__a
+      offset: 0.0
+      order: intel
+      physical_range: '[0|0]'
+      physical_unit: ''
+      precision: 1.0
+      type: int
+    - bit: 7
+      is_signed_var: true
+      len: 32
+      name: m_a_f__b
+      offset: 0.0
+      order: motorola
+      physical_range: '[0|655.35]'
+      physical_unit: g/s
+      precision: 1.0
+      type: double
+  '11':
+    id: '11'
+    name: throttle__position
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: throttle__position
+      offset: 0.0
+      order: intel
+      physical_range: '[0|100]'
+      physical_unit: '%'
+      precision: 0.392
+      type: double
+  1f:
+    id: 1f
+    name: run__since__engine__start
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: a
+      offset: 0.0
+      order: intel
+      physical_range: '[0|65535]'
+      physical_unit: seconds
+      precision: 256.0
+      type: double
+    - bit: 8
+      is_signed_var: false
+      len: 8
+      name: b
+      offset: 0.0
+      order: intel
+      physical_range: '[0|65535]'
+      physical_unit: seconds
+      precision: 1.0
+      type: int
+  '3':
+    id: '3'
+    name: fuel__system__status
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: fuel__system_1
+      offset: 0.0
+      order: intel
+      physical_range: '[0|16]'
+      physical_unit: ''
+      precision: 1.0
+      type: int
+    - bit: 8
+      is_signed_var: false
+      len: 8
+      name: fuel__system_2
+      offset: 0.0
+      order: intel
+      physical_range: '[0|16]'
+      physical_unit: ''
+      precision: 1.0
+      type: int
+  '4':
+    id: '4'
+    name: calculated_engine_load
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 7
+      is_signed_var: false
+      len: 8
+      name: engine__load
+      offset: 0.0
+      order: motorola
+      physical_range: '[0|100]'
+      physical_unit: '%'
+      precision: 0.392
+      type: double
+  '43':
+    id: '43'
+    name: absolute__load__value
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: a
+      offset: 0.0
+      order: intel
+      physical_range: '[0|25700]'
+      physical_unit: '%'
+      precision: 100.352
+      type: double
+    - bit: 8
+      is_signed_var: false
+      len: 8
+      name: b
+      offset: 0.0
+      order: intel
+      physical_range: '[0|25700]'
+      physical_unit: '%'
+      precision: 0.392
+      type: double
+  '45':
+    id: '45'
+    name: relative__throttle__position
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: rel__throttle__position
+      offset: 0.0
+      order: intel
+      physical_range: '[0|100]'
+      physical_unit: '%'
+      precision: 0.392
+      type: double
+  '5':
+    id: '5'
+    name: engine__coolant__temperature
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: engine__coolant__temp
+      offset: -40.0
+      order: intel
+      physical_range: '[-40|215]'
+      physical_unit: deg C
+      precision: 1.0
+      type: int
+  '6':
+    id: '6'
+    name: short__term__fuel__trim__bank1
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: instant_fuel_trim_bank1
+      offset: -100.0
+      order: intel
+      physical_range: '[-100|99.2]'
+      physical_unit: '%'
+      precision: 0.781
+      type: double
+  '7':
+    id: '7'
+    name: long__term__fuel__trim__bank1
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: long_term_fuel_trim_bank1
+      offset: -100.0
+      order: intel
+      physical_range: '[-100|99.2]'
+      physical_unit: '%'
+      precision: 0.781
+      type: double
+  '8':
+    id: '8'
+    name: short__term__fuel__trim__bank2
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: instant_fuel_trim_bank2
+      offset: -100.0
+      order: intel
+      physical_range: '[-100|99.2]'
+      physical_unit: '%'
+      precision: 0.781
+      type: double
+  '9':
+    id: '9'
+    name: long__term__fuel__trim__bank1
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: long_term_fuel_trim_bank2
+      offset: -100.0
+      order: intel
+      physical_range: '[-100|99.2]'
+      physical_unit: '%'
+      precision: 0.781
+      type: double
+  a:
+    id: a
+    name: fuel__pressure
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: fuel__pressure
+      offset: 0.0
+      order: intel
+      physical_range: '[0|765]'
+      physical_unit: kPa
+      precision: 3.0
+      type: double
+  b:
+    id: b
+    name: intake__manifold__absolute__pressure
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: i_m_a_p
+      offset: 0.0
+      order: intel
+      physical_range: '[0|255]'
+      physical_unit: kPa
+      precision: 1.0
+      type: int
+  c:
+    id: c
+    name: engine__r_p_m
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 7
+      is_signed_var: false
+      len: 8
+      name: a
+      offset: 0.0
+      order: motorola
+      physical_range: '[0|6000]'
+      physical_unit: RPM
+      precision: 1.0
+      type: int
+    - bit: 15
+      is_signed_var: false
+      len: 8
+      name: b
+      offset: 0.0
+      order: motorola
+      physical_range: '[0|6000]'
+      physical_unit: RPM
+      precision: 1.0
+      type: int
+  d:
+    id: d
+    name: vehicle__speed
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: false
+      len: 8
+      name: vehicle__speed
+      offset: 0.0
+      order: intel
+      physical_range: '[0|255]'
+      physical_unit: kph
+      precision: 1.0
+      type: int
+  e:
+    id: e
+    name: spark__timing__advance
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: spark__timing__advance
+      offset: -64.0
+      order: intel
+      physical_range: '[-64|63.5]'
+      physical_unit: deg before TDC
+      precision: 0.5
+      type: double
+  f:
+    id: f
+    name: intake__air__temperature
+    protocol_type: report
+    sender: Service__01
+    vars:
+    - bit: 0
+      is_signed_var: true
+      len: 8
+      name: intake__air__temp
+      offset: -40.0
+      order: intel
+      physical_range: '[-40|215]'
+      physical_unit: deg C
+      precision: 1.0
+      type: int

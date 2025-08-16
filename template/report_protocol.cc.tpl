@@ -1,4 +1,4 @@
-#include <pix_%(car_type_lower)s_driver/%(protocol_name_lower)s.hpp>
+#include <lma_%(car_type_lower)s_driver/%(protocol_name_lower)s.hpp>
 
 
 %(classname)s::%(classname)s() {}

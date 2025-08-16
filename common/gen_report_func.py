@@ -32,7 +32,7 @@ def gen_parser_case_code_list(protocol, car_type):
 
     {message_name}_msg.header = header;
     {assign_variable_list}
-    {message_name}_ptr_ = std::make_shared<pix_{car_type}_driver_msgs::msg::{camel_message_name}>({message_name}_msg);
+    {message_name}_ptr_ = std::make_shared<lma_{car_type}_driver_msgs::msg::{camel_message_name}>({message_name}_msg);
     break;
     """.format(camel_message_name=camel_message_name, message_name=message_name, assign_variable_list=assign_variable_list, car_type=car_type)
     return code

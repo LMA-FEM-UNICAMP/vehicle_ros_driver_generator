@@ -28,7 +28,7 @@ def gen_callback_func_list(protocol, car_type):
     for v in protocol['vars']:
         var_list += "msg->%s, " % (v['name'])
     func = """\n
-    void ControlCommand::callback{camel_message_name}(const pix_{car_type}_driver_msgs::msg::{camel_message_name}::ConstSharedPtr & msg)
+    void ControlCommand::callback{camel_message_name}(const lma_{car_type}_driver_msgs::msg::{camel_message_name}::ConstSharedPtr & msg)
     {{
         {message_name}_received_time_ = this->now();
         {message_name}_ptr_ = msg;
@@ -73,7 +73,7 @@ def gen_publishing_msg_code(protocol, car_type):
 # msg 到 can原始函数
 def sendCanID_callback_func_list(protocol, car_type):
     message_name = protocol["name"]
-    func = """\nstatic void %s_callback(const pix_%s_driver_msgs::%s &msg)
+    func = """\nstatic void %s_callback(const lma_%s_driver_msgs::%s &msg)
 {
     """%(message_name, car_type, message_name)
 
@@ -127,6 +127,6 @@ def timer_callback_func(protocol):
 
 def gen_Subscriber_list(protocol, car_type):
     message_name = protocol["name"]
-    template = 'ros::Subscriber sub_{can_name} = nh.subscribe("/pix_{car_type}/{name}", 1, {can_name}_callback);\n\t'
+    template = 'ros::Subscriber sub_{can_name} = nh.subscribe("/lma_{car_type}/{name}", 1, {can_name}_callback);\n\t'
     # return template.format(name=message_name.rsplit("_", 1)[0], can_name=message_name.rsplit("_",1)[0])
     return template.format(car_type=car_type, name=message_name, can_name=message_name)

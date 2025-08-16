@@ -1,10 +1,10 @@
 dbc_file: pixmoving.dbc
 protocol_conf: pixmoving.yml
-car_type: hooke 
+car_type: vilma_can 
 sender_list: [DriveCtrl, BrakeCtrl, SteerCtrl, VehicleCtrl, WheelCtrl]
 sender: ACU
 black_list: []
 
 output_dir: output
-config_dir: config/
+config_dir: config/pixmoving
 

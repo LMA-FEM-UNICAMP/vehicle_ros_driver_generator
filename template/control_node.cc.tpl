@@ -9,8 +9,8 @@
 
 
 // include- msgs header file
-// Example: #include "pix_driver_msgs/BrakeCommand.h"
-// #include pix_driver_msgs/protocols["name"].h
+// Example: #include "lma_driver_msgs/BrakeCommand.h"
+// #include lma_driver_msgs/protocols["name"].h
 %(include_msgsName_list)s
 
 
@@ -19,7 +19,7 @@
 // #include protocols["name"].cpp
 %(include_ParseName_list)s
 
-namespace pix_%[car_type]s_driver
+namespace lma_%[car_type]s_driver
 {
 namespace control_command
 {
@@ -92,7 +92,7 @@ void timer_callback(const ros::TimerEvent &te)
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, "pix_%(car_type)s_driver_command_node");
+    ros::init(argc, argv, "lma_%(car_type)s_driver_command_node");
     ros::NodeHandle nh;
 
     // creat ros Subscriber
@@ -109,4 +109,4 @@ int main(int argc, char* argv[])
 }
 
 } // control_command
-} // pix_%{car_type}s_driver
+} // lma_%{car_type}s_driver

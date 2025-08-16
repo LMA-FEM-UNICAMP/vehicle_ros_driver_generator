@@ -5,7 +5,7 @@
 #include "std_msgs/Header.h"
 
 // name = 
-// # include "pix pix_driver_msgs/{name}.h"
+// # include "pix lma_driver_msgs/{name}.h"
 %(include_pixMsgs_list)s
 
 // # include "{name}.hpp"
@@ -16,7 +16,7 @@ static can_msgs::Frame can_frame_msg;
 // static ros::Publisher pub_{can_name};
 %(global_variable_Publisher_list)s
 
-// static pix_driver_msgs::{name} {name}_msg;
+// static lma_driver_msgs::{name} {name}_msg;
 %(global_variable_pixmsg)s
 
 // static {name}.replace('_', '').capitalize()  {name}_entity
@@ -36,12 +36,12 @@ static void can_callback(const can_msgs::Frame &msg)
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, "pix_%(car_type)s_driver_report_node");
+    ros::init(argc, argv, "lma_%(car_type)s_driver_report_node");
     ros::NodeHandle nh;
 
     ros::Subscriber sub = nh.subscribe("/received_messages", 1, can_callback);
 
-    // pub_{can_name} = nh.advertise<pix_driver_msgs::{name}>("/pix/{can_name}_report", 1, true);
+    // pub_{can_name} = nh.advertise<lma_driver_msgs::{name}>("/pix/{can_name}_report", 1, true);
     %(Publisher_include)s
     // add another publisher
 

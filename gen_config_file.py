@@ -40,18 +40,18 @@ def gen_protocols(protocol_conf_file, protocol_dir):
 
     code_CMake_tpl_file = "template/code_CMakeLists.txt.tpl"
     code_xml_tpl_file = "template/code_package.xml.tpl"
-    code_cmake_file = protocol_dir + "/pix_"+car_type+"_driver/" + CMakeList
-    code_xml_file = protocol_dir + "/pix_"+car_type+"_driver/" + package
+    code_cmake_file = protocol_dir + "/lma_"+car_type+"_driver/" + CMakeList
+    code_xml_file = protocol_dir + "/lma_"+car_type+"_driver/" + package
 
     msgs_CMake_tpl_file = "template/msgs_CMakeLists.txt.tpl"
     msgs_xml_tpl_file = "template/msgs_package.xml.tpl"
-    msgs_cmake_file = protocol_dir + "/pix_"+car_type+"_driver_msgs/" + CMakeList
-    msgs_xml_file = protocol_dir + "/pix_"+car_type+"_driver_msgs/" + package
+    msgs_cmake_file = protocol_dir + "/lma_"+car_type+"_driver_msgs/" + CMakeList
+    msgs_xml_file = protocol_dir + "/lma_"+car_type+"_driver_msgs/" + package
 
-    if not os.path.exists(protocol_dir + "/pix_"+car_type+"_driver_msgs/"):
-        os.makedirs(protocol_dir + "/pix_"+car_type+"_driver_msgs/")
-    if not os.path.exists(protocol_dir + "/pix_"+car_type+"_driver/"):
-        os.makedirs(protocol_dir + "/pix_"+car_type+"_driver/")
+    if not os.path.exists(protocol_dir + "/lma_"+car_type+"_driver_msgs/"):
+        os.makedirs(protocol_dir + "/lma_"+car_type+"_driver_msgs/")
+    if not os.path.exists(protocol_dir + "/lma_"+car_type+"_driver/"):
+        os.makedirs(protocol_dir + "/lma_"+car_type+"_driver/")
 
     code_CMake_FMT = common.get_tpl_fmt(code_CMake_tpl_file)
     code_xml_FMT = common.get_tpl_fmt(code_xml_tpl_file)

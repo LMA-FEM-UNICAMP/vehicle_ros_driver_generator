@@ -1,6 +1,6 @@
-#include <pix_%(car_type)s_driver/report_parser.hpp>
+#include <lma_%(car_type)s_driver/report_parser.hpp>
 
-namespace pix_%(car_type)s_driver
+namespace lma_%(car_type)s_driver
 {
 namespace report_parser
 {
@@ -35,7 +35,7 @@ ReportParser::ReportParser() : Node("report_parser")
   {
     /** example
     brake_sta_fb_pub_ =
-      create_publisher<V2aBrakeStaFb>("/pix_hooke/v2a_brakestafb", rclcpp::QoS{1});
+      create_publisher<V2aBrakeStaFb>("/lma_hooke/v2a_brakestafb", rclcpp::QoS{1});
     **/
     %(publisher_instance_list)s 
   }
@@ -126,4 +126,4 @@ void ReportParser::timerCallback()
 }
 
 } // namespace report_parser
-} // namespace pix_%(car_type)s_driver
+} // namespace lma_%(car_type)s_driver

@@ -71,7 +71,7 @@ def gen_proto_file(config_file, work_dir):
         protocols = content["protocols"]
         car_type = content["car_type"]
         # 判断文件存储路径是否存在，没有则生成目录路径
-        work_dir = work_dir + "/pix_"+car_type+"_driver_msgs/msg/"
+        work_dir = work_dir + "/lma_"+car_type+"_driver_msgs/msg/"
         if not os.path.exists(work_dir):
             os.makedirs(work_dir)
         # 迭代每一帧生成msg文件

@@ -40,8 +40,8 @@ def gen_report_header(car_type, protocol, output_dir):
     """
     report_header_tpl_file = "template/report_protocol.h.tpl"
     FMT = get_tpl_fmt(report_header_tpl_file)
-    report_header_file = output_dir + "/pix_"+car_type + \
-        "_driver/include/pix_"+car_type+"_driver/%s.hpp" % protocol["name"]
+    report_header_file = output_dir + "/lma_"+car_type + \
+        "_driver/include/lma_"+car_type+"_driver/%s.hpp" % protocol["name"]
     with open(report_header_file, 'w') as h_fp:
         fmt_val = {}
         fmt_val["car_type_lower"] = car_type.lower()
@@ -92,7 +92,7 @@ def gen_report_cpp(car_type, protocol, output_dir):
     """
     report_cpp_tpl_file = "template/report_protocol.cc.tpl"
     FMT = get_tpl_fmt(report_cpp_tpl_file)
-    report_cpp_file = output_dir + "/pix_"+car_type + \
+    report_cpp_file = output_dir + "/lma_"+car_type + \
         "_driver/src/%s.cc" % protocol["name"]
     with open(report_cpp_file, 'w') as fp:
         fmt_val = {}
@@ -199,8 +199,8 @@ def gen_control_header(car_type, protocol, output_dir):
     """
     control_header_tpl_file = "template/control_protocol.h.tpl"
     FMT = get_tpl_fmt(control_header_tpl_file)
-    control_header_file = output_dir + "/pix_"+car_type + \
-        "_driver/include/pix_"+car_type+"_driver/%s.hpp" % protocol["name"]
+    control_header_file = output_dir + "/lma_"+car_type + \
+        "_driver/include/lma_"+car_type+"_driver/%s.hpp" % protocol["name"]
     with open(control_header_file, 'w') as h_fp:
         fmt_val = {}
         fmt_val["car_type_lower"] = car_type
@@ -417,7 +417,7 @@ def gen_control_cpp(car_type, protocol, output_dir):
     """
     control_cpp_tpl_file = "template/control_protocol.cc.tpl"
     FMT = get_tpl_fmt(control_cpp_tpl_file)
-    control_cpp_file = output_dir + "/pix_" + \
+    control_cpp_file = output_dir + "/lma_" + \
         car_type+"_driver/src/%s.cc" % protocol["name"]
     with open(control_cpp_file, 'w') as fp:
         fmt_val = {}
@@ -506,10 +506,10 @@ def gen_protocols(protocol_conf_file, protocol_dir, car_type):
         doc string:
     """
     print("Generating protocols")
-    if not os.path.exists(protocol_dir + "/pix_"+car_type+"_driver/src/"):
-        os.makedirs(protocol_dir + "/pix_"+car_type+"_driver/src/")
-    if not os.path.exists(protocol_dir + "/pix_"+car_type+"_driver/include/pix_"+car_type+"_driver"):
-        os.makedirs(protocol_dir + "/pix_"+car_type+"_driver/include/pix_"+car_type+"_driver")
+    if not os.path.exists(protocol_dir + "/lma_"+car_type+"_driver/src/"):
+        os.makedirs(protocol_dir + "/lma_"+car_type+"_driver/src/")
+    if not os.path.exists(protocol_dir + "/lma_"+car_type+"_driver/include/lma_"+car_type+"_driver"):
+        os.makedirs(protocol_dir + "/lma_"+car_type+"_driver/include/lma_"+car_type+"_driver")
 
     with open(protocol_conf_file, 'r') as fp:
         content = yaml.safe_load(fp)
